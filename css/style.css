@@ -17,17 +17,12 @@ body{
 #landcodes a{
   background-color: lightblue;
 }
-  
-#myForm{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  float: left;
-}
-    
+      
 #searchforms{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  border: solid 5px red;
 }
 
 .fieldset{
@@ -320,11 +315,16 @@ nav a:hover{
  color: white;
 }
 
+@media (max-width: 400px){ 
+  .fieldset{width: 15rem}
+}
+
+
 @media (max-width: 1000px){
   #flex5days div{width: 7rem;}  
 }
 
 @media (max-width: 1236px){ 
-  .fieldset{height: 28rem; width: 20rem;}
+  .fieldset{height: 28rem; width: 20rem; padding-bottom: 5rem;}
 }
 
