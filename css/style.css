@@ -111,10 +111,6 @@ body{
   text-align: center;
 }
  
-.tryit{
-  text-align: center;
-}
-
 #ikonerna{
   height: 5rem;
   width: auto;
@@ -301,8 +297,9 @@ footer{
 
 footer a{
   text-decoration: none;
-  margin: 1rem;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: solid 2px white;
 }
 
 footer a:visited{
