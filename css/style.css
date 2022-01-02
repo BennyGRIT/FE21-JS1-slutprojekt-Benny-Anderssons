@@ -315,16 +315,17 @@ nav a:hover{
  color: white;
 }
 
-@media (max-width: 400px){ 
+@media (max-width: 310px){ 
   .fieldset{width: 15rem}
+  footer{display: none;}
+}
+
+@media (max-width: 480px){ 
+  .fieldset{width: 15rem}
+  footer{margin-top: 10rem;}
 }
 
 
 @media (max-width: 1000px){
   #flex5days div{width: 7rem;}  
 }
-
-@media (max-width: 1236px){ 
-  .fieldset{height: 28rem; width: 20rem; padding-bottom: 5rem;}
-}
-
