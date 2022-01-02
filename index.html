@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/bennytitle.jpg">
+
+    <script src="js/script.js" defer></script>
+    <script src="js/anime.min.js" defer></script>
+
+    <title>Benny Weather App</title>
+</head>
+
+<body>
+
+    <div id="searchforms">
+        <form id="myForm">
+            <fieldset class="fieldset">
+                <p><u> Bennys VäderApp - Vädret aktuell dag och fem dagar framåt:</u></p>
+                <ol>
+                    <li>Fyll i stad eller område och klicka på sökknappen, alternativt tryck Enter.</li>
+                    <li>Vissa städer kan finnas i olika länder. Fyll isåfall i landskoden. (T.ex. SE för Sverige).
+                    </li>
+                    Klicka på knappen nedan för att se alla landskoder i världen.
+                    <li>Testa gärna funktionerna i den högra rutan.</li>
+                </ol>
+
+                Stad eller område:
+                <input id="citytext" type="text" size="30" placeholder="Sök Stad...">
+                (Obligatorisk)
+                <br>
+                Landskoden:
+                <input id="countrycode" type="text" size="5" placeholder="Sök...">
+                (Ej obligatorisk)
+
+                <button id="submit"><svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1"
+                        viewBox="0 0 48 48" enable-background="new 0 0 48 48" height="2em" width="2em"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g fill="#616161">
+                            <rect x="34.6" y="28.1" transform="matrix(.707 -.707 .707 .707 -15.154 36.586)" width="4"
+                                height="17"></rect>
+                            <circle cx="20" cy="20" r="16"></circle>
+                        </g>
+                        <rect x="36.2" y="32.1" transform="matrix(.707 -.707 .707 .707 -15.839 38.239)" fill="#37474F"
+                            width="4" height="12.3"></rect>
+                        <circle fill="#64B5F6" cx="20" cy="20" r="13"></circle>
+                        <path fill="#BBDEFB"
+                            d="M26.9,14.2c-1.7-2-4.2-3.2-6.9-3.2s-5.2,1.2-6.9,3.2c-0.4,0.4-0.3,1.1,0.1,1.4c0.4,0.4,1.1,0.3,1.4-0.1 C16,13.9,17.9,13,20,13s4,0.9,5.4,2.5c0.2,0.2,0.5,0.4,0.8,0.4c0.2,0,0.5-0.1,0.6-0.2C27.2,15.3,27.2,14.6,26.9,14.2z">
+                        </path>
+                    </svg>
+                </button>
+                <div id="message"></div>
+
+                <button id="landcodes" onclick="landskoder()">Klicka här för att se världens alla
+                    landskoder
+                </button>
+
+                <p>Dina senaste sökningar:</p>
+                <ol id="searchedFor"></ol>
+            </fieldset>
+        </form>
+
+
+        <fieldset class="fieldset">
+            <p><u> Bennys VäderApp - Funktioner: </u></p>
+            <p>Välj ett färgschema för sidan. Vänligen skriv färgen på engelska.</p>
+
+            <button class="blue" type="button" onclick="blue()">Blå</button>
+            <button class="yellow" type="button" onclick="yellow()">Gul</button>
+            <button class="green" type="button" onclick="green()">Grön</button>
+            <button class="grey" type="button" onclick="grey()">Grå-ish</button>
+            <button class="hotpink" type="button" onclick="hotpink()">hotpink</button>
+            <button class="purple" type="button" onclick="purple()">Lila</button>
+            <button class="rainbow" type="button" onclick="rainbow()">Regnbåge</button>
+            <p>Ps. Regnbågar är förevigt, tryck på F5 om du vill byta färg.</p>
+
+            <form>
+                <input id="searchcolor" type="text" placeholder="Write a color here">
+                <button id="userchoicebtn">Välj din egna färg, på Engelska</button>
+                <br>
+                <button id="colorsEng">Läsa mer om Staden på Wikipedia</button>
+
+            </form>
+
+            <p id="links"></p> Sök först på en stad eller ett område, sedan kan du:
+            <br>
+            <button id="wikipedia">Läsa mer om Staden på Wikipedia här:</button>
+            <br>
+            <button id="wikipediaEng">Read more about the City on Wikipedia here:</button>
+
+            <br>
+            <button id="google" onclick="google()">Söka på Staden på www.google.se här: </button>
+            <br>
+        </fieldset>
+
+    </div>
+
+
+    <div id="flextoday">
+        <div id="alladivs">
+            <div id="idag"></div>
+            <div id="staden"></div>
+            <div id="tidzon"></div>
+            <img src="img/Grit-Academy-logo.png" alt="" id="ikonerna">
+            <div id="temperaturenidag">Här till vänster ser ni en riktigt fin bild på Tourning Torso i Malmö.</div>
+            <br>
+            <div id="vadretidag"></div>
+            <div id="vindhastighetidag"></div>
+            <div id="blaseridag"></div>
+            <div id="luftfuktighet"></div>
+        </div>
+    </div>
+
+    <div class="tryit"></div>
+
+    <div id="flex5days">
+
+        <div class="divs5">
+            <div id="1"></div>
+            <img src="img/Grit-Academy-logo.png" alt="" id="ikonen1">
+        </div>
+        <div class="divs5">
+            <div id="2"></div>
+            <img src="img/Grit-Academy-logo.png" alt="" id="ikonen2">
+        </div>
+        <div class="divs5">
+            <div id="3"></div>
+            <img src="img/Grit-Academy-logo.png" alt="" id="ikonen3">
+        </div>
+        <div class="divs5">
+            <div id="4"></div>
+            <img src="img/Grit-Academy-logo.png" alt="" id="ikonen4">
+        </div>
+        <div class="divs5">
+            <div id="5"></div>
+            <img src="img/Grit-Academy-logo.png" alt="" id="ikonen5">
+        </div>
+    </div>
+
+    <footer>
+        <a class="toTop" href="#top">Upp till toppen av sidan</a>
+    </footer>
+
+</body>
+
+</html>

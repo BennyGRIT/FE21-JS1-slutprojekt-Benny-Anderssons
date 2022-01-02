@@ -1,0 +1,330 @@
+body{
+  background-image: url("../img/malmo.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  font-weight: bold;
+  text-shadow: 1px 2px 3px black;
+  color: linen;
+}
+      
+#landcodes{
+  border-radius: 1rem;
+  font-weight: bold;
+  height: 2rem;
+}
+
+#landcodes a{
+  background-color: lightblue;
+}
+  
+#myForm{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  float: left;
+}
+    
+#searchforms{
+  display: flex;
+  justify-content: center;
+}
+
+.fieldset{
+  border: solid linen 5px;
+  border-radius: 1rem;
+  background-color: rgba(0, 125, 241, 0.7);
+  padding-top: 1rem;
+  height: 28rem;
+  display: block;
+  overflow: auto;
+}
+  
+#citytext{
+  border-radius: 1rem;
+}
+ 
+#countrycode{
+  border-radius: 1rem;
+}
+  
+#submit{
+  display: flex;
+  color: lightblue;
+  box-shadow: 1rem 2rem 3rem white;
+  font-size: large;
+  border-radius: 1rem;
+  margin-right: 2rem;
+}
+  
+#submit:hover{
+  background-color: lightblue;
+  color: linen;
+}
+
+#flextoday{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+#flextoday div{
+  width: 20rem;
+  text-align: center;
+  justify-content: center;
+}
+ 
+#alladivs{
+  width: 30rem;
+  height: 19rem;
+  justify-content: center;
+  border: solid 5px linen;
+  border-radius: 10%;
+  background-color: rgba(0, 125, 241, 0.7);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding: 10px;
+}
+ 
+#flex5days{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  height: 12rem;
+}
+  
+#flex5days div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 10rem;
+}
+  
+#flex5days img{
+  height: 5rem;
+  width: auto;
+}
+ 
+.divs5{
+  border: solid 2px linen;
+  border-radius: 10%;
+  padding: 1rem;
+  font-weight: bold;
+  background-color: rgba(0, 125, 241, 0.7);
+}
+ 
+#idag{
+  text-align: center;
+}
+ 
+.tryit{
+  text-align: center;
+}
+
+#ikonerna{
+  height: 5rem;
+  width: auto;
+}
+ 
+#staden{
+  font-size: xx-large;
+  font-weight: bold;
+}
+  
+#temperaturenidag{
+  font-size: xx-large;
+  font-weight: bold;
+}
+  
+#message{
+  color: red;
+  text-shadow: 3px 3px 6px black;
+  font-size: larger;
+}
+
+#wikipedia{
+  border-radius: 1rem;
+  font-weight: bold;
+  height: 2rem;
+  width: 25rem;
+}
+
+#wikipedia a{
+  background-color: lightblue;
+  text-decoration: none;
+}
+
+#wikipediaEng{
+  border-radius: 1rem;
+  font-weight: bold;
+  height: 2rem;
+  width: 25rem;
+}
+
+#wikipediaEng a{
+  background-color: lightblue;
+  text-decoration: none;
+}
+
+#google{
+  border-radius: 1rem;
+  font-weight: bold;
+  height: 2rem;
+  width: 25rem;
+}
+
+#google a{
+  background-color: lightblue;
+}
+
+/* Ändra färger */
+.purple{
+  background-color: rgb(153, 6, 153);
+  color: white;
+  padding: 1rem;
+  border: solid 4px purple;
+  border-radius: 20%;
+}
+.purple:hover{
+  background-color: purple;
+}
+
+.green{
+  background-color: rgb(4, 148, 4);
+  color: white;
+  padding: 1rem;
+  border: solid 4px green;
+  border-radius: 20%;
+}
+.green:hover{
+  background-color: green;
+  color: white;
+}
+
+.blue{
+  background-color: rgba(1, 1, 173, 0.63);
+  color: white;
+  padding: 1rem;
+  border: solid 4px darkblue;
+  border-radius: 20%;
+}
+.blue:hover{
+  background-color: blue;
+}
+
+.grey{
+  background-color: grey;
+  color: white;
+  padding: 1rem;
+  border: solid 4px rgb(100, 100, 100);
+  border-radius: 20%;
+}
+.grey:hover{
+  background-color: rgb(100, 100, 100);
+  color: white;
+}
+
+.hotpink{
+  background-color: hotpink;
+  color: white;
+  padding: 1rem;
+  border: solid 4px rgb(212, 73, 143);
+  border-radius: 20%;
+}
+.hotpink:hover{
+  background-color: rgb(212, 73, 143);
+  color: white;
+}
+
+.yellow{
+background-color: yellow;
+color: black;
+padding: 1rem;
+border: solid 4px rgb(235, 235, 6);
+border-radius: 20%;
+}
+
+.yellow:hover{
+  background-color: rgb(235, 235, 6);
+}
+
+.rainbow{
+  background-image: linear-gradient(to left, violet, indigo, blue,  green, yellow, orange, red);
+  color: white;
+  padding: 1rem;
+  border: solid 4px white;
+  border-radius: 20%;
+}
+
+.rainbow:hover{
+  background-image: linear-gradient(to left, red, orange, yellow,green,blue,indigo,violet)
+};
+
+
+#searchcolor{
+  border-radius: 1rem;
+}
+
+#userchoicebtn{
+  border-radius: 1rem;
+  background-color: linen;
+  font-weight: bolder;
+  height: 3rem;
+}
+
+#colorsEng{
+  border-radius: 1rem;
+  font-weight: bold;
+  height: 2rem;
+}
+
+#colorsEng a{
+  background-color: lightblue;
+  text-decoration: none;
+}
+
+#links{
+  border-top: solid 3px linen;
+}
+
+#searchedFor {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+footer{
+  margin-top: 2rem;
+  position: sticky;
+  bottom:  0;
+  font-size: larger;
+  height: 3rem;
+  background-color: rgba(0, 125, 241);
+  font-size: x-large;
+  text-shadow: 2px 4px 6px red;
+  text-align: center;
+  border-top: white solid 3px;
+}
+
+
+footer a{
+  text-decoration: none;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+footer a:visited{
+  color: white;
+}
+
+nav a:hover{
+ color: white;
+}
+
+@media (max-width: 1000px){
+  #flex5days div{width: 7rem;}  
+}
+
+@media (max-width: 1236px){ 
+  .fieldset{height: 28rem; width: 20rem;}
+}
+
