@@ -252,7 +252,7 @@ border-radius: 20%;
 
 .rainbow:hover{
   background-image: linear-gradient(to left, red, orange, yellow,green,blue,indigo,violet)
-};
+}
 
 
 #searchcolor{
@@ -298,7 +298,6 @@ footer{
   text-align: center;
   border-top: white solid 3px;
 }
-
 
 footer a{
   text-decoration: none;
