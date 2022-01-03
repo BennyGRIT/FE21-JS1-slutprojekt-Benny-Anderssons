@@ -81,7 +81,7 @@ btn.addEventListener('click', function (e) {
                 //API TIMEZONE - för att få fram lokal tid och datum för sökta städer:
                 const APIKeyTime = `E1TC659V7GK0`;
 
-                const timeZoneURL = `http://api.timezonedb.com/v2.1/get-time-zone?key=E1TC659V7GK0&format=json&by=zone&zone=${timeZone}`;
+                const timeZoneURL = `https://api.timezonedb.com/v2.1/get-time-zone?key=E1TC659V7GK0&format=json&by=zone&zone=${timeZone}`;
 
                 fetch(timeZoneURL)
                     .then(
