@@ -1,11 +1,12 @@
 const APIKey = `a545225a1ccf440395c280936ba0c361`;
 const cityText = document.getElementById('citytext');
 const countryCode = document.getElementById('countrycode');
-const btn = document.getElementById('submit');
+const btn = document.querySelector('.submit');
 const animen = document.getElementById('alladivs');
 
 // Main knappen!
-btn.addEventListener('click', function (e) {
+btn.addEventListener('click', function searchbtn(e) {
+
     e.preventDefault();
     setMessage(`...Söker efter vädret i ${cityText.value}...`);
 
@@ -41,7 +42,7 @@ btn.addEventListener('click', function (e) {
                 //Skriver ut infon till divarna i 'alladivs':
                 document.getElementById('staden').innerHTML = city;
                 document.getElementById('tidzon').innerHTML = 'Tidzon: ' + timeZone;
-                
+
                 document.getElementById('ikonerna').src = `https://bennygrit.github.io/Icons/icons/${ikonen}.png`;
                 document.getElementById('temperaturenidag').innerHTML = weatherData.data[0].temp + ' °C';
                 document.getElementById('vindhastighetidag').innerHTML = 'Vindhastighet: ' + weatherData.data[0].wind_spd + ' m/s';
@@ -64,7 +65,7 @@ btn.addEventListener('click', function (e) {
                 document.getElementById('google').onclick = function google() {
                     window.open('http://google.com/search?q=' + city);
                 };
-                
+
                 document.getElementById('google').innerHTML = `Sök på ${city} på www.google.se här: `;
 
                 //Scrollar ner sidan så att man kan se all sökresultat utan att behöva scrolla ner:
@@ -72,14 +73,17 @@ btn.addEventListener('click', function (e) {
                 scroll.scrollIntoView();
 
                 //Lägger till de senaste sökta städerna. No Limit.
+                // btn.addEventListener('click', function searchbtn(e) {
+
                 let node = document.createElement('li');
                 let textnode = document.createTextNode(city);
+                node.classList.add('searchedCityLi');
 
                 node.appendChild(textnode);
                 document.getElementById('searchedFor').appendChild(node);
 
                 //API TIMEZONE - för att få fram lokal tid och datum för sökta städer:
-                const APIKeyTime = `E1TC659V7GK0`;
+                // const APIKeyTime = `E1TC659V7GK0`;
 
                 const timeZoneURL = `https://api.timezonedb.com/v2.1/get-time-zone?key=E1TC659V7GK0&format=json&by=zone&zone=${timeZone}`;
 
@@ -117,7 +121,7 @@ btn.addEventListener('click', function (e) {
                 })
 
                 anime({
-                    targets: '#submit',
+                    targets: '.submit',
                     rotate: '1turn',
                     easing: 'linear',
                     direction: 'alternate',
@@ -160,113 +164,49 @@ btn.addEventListener('click', function (e) {
             });
 });
 
+
 //Knappen för att se vilka landskoder som finns
-function landskoder() {
+
+document.getElementById('landcodes').addEventListener('click', function searchlandcodes() {
     window.open('https://www.riksgalden.se/globalassets/dokument_sve/pm/riksgaldsspar/landskoder-riksgalden.pdf');
-};
+});
 
 // Färgschema för rutorna
-function blue() {
-    const fieldset = document.getElementsByClassName('fieldset');
-    for (let i = 0; i < fieldset.length; i++) {
-        fieldset[i].style.backgroundColor = 'rgba(1, 1, 173, 0.63)';
-    };
 
-    const elements = document.getElementsByClassName('divs5');
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = 'rgba(1, 1, 173, 0.63)';
-    };
-    document.getElementById('alladivs').style.backgroundColor = 'rgba(1, 1, 173, 0.63)';
-    document.querySelector('footer').style.backgroundColor = 'blue';
-};
+const blueC = 'rgba(1, 1, 173, 0.63)'
+const yellowC = 'rgb(235, 235, 6, .7)'
+const greenC = 'rgb(4, 148, 4, .7)'
+const greyC = 'rgb(100, 100, 100, .7)';
+const hotpinkC = 'rgb(253, 93, 173, .7)';
+const purpleC = 'rgb(153, 6, 153, 0.7)';
 
-function yellow() {
-    const fieldset = document.getElementsByClassName('fieldset');
-    for (let i = 0; i < fieldset.length; i++) {
-        fieldset[i].style.backgroundColor = 'rgb(235, 235, 6, .7)';
-    };
+const allColors = [blueC, yellowC, greenC, greyC, hotpinkC, purpleC]
+const allColorClasses = ['blue', 'yellow', 'green', 'grey', 'hotpink', 'purple']
 
-    const elements = document.getElementsByClassName('divs5');
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = 'rgb(235, 235, 6, .7)';
-    };
-    document.getElementById('alladivs').style.backgroundColor = 'rgb(235, 235, 6, .7)';
-    document.querySelector('footer').style.backgroundColor = 'yellow';
-};
+for (let ind = 0; ind < allColorClasses.length; ind++) {
+    const btnclrSelection = document.createElement('button');
+    btnclrSelection.innerHTML = allColorClasses[ind];
+    btnclrSelection.className = 'clr' + ind;
+    document.querySelector('.changeTheColor').appendChild(btnclrSelection);
 
-function green() {
-    const fieldset = document.getElementsByClassName('fieldset');
-    for (let i = 0; i < fieldset.length; i++) {
-        fieldset[i].style.backgroundColor = 'rgb(4, 148, 4, .7)';
-    };
+    const allOfTheColors = document.querySelector('.clr' + ind);
+    console.log('allOfTheColors')
+    allOfTheColors.addEventListener('click', function lotsOfColors(e) {
 
-    const elements = document.getElementsByClassName('divs5');
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = 'rgb(4, 148, 4, .7)';
-    };
-    document.getElementById('alladivs').style.backgroundColor = 'rgb(4, 148, 4, .7)';
-    document.querySelector('footer').style.backgroundColor = 'green';
+        const fieldset = document.getElementsByClassName('fieldset');
+        for (let i = 0; i < fieldset.length; i++) {
+            fieldset[i].style.backgroundColor = allColors[ind];
+        };
+
+        const elements = document.getElementsByClassName('divs5');
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].style.backgroundColor = allColors[ind];
+        };
+        document.getElementById('alladivs').style.backgroundColor = allColors[ind];
+        document.querySelector('footer').style.backgroundColor = allColorClasses[ind];
+    });
+
 }
-
-function grey() {
-    const fieldset = document.getElementsByClassName('fieldset');
-    for (let i = 0; i < fieldset.length; i++) {
-        fieldset[i].style.backgroundColor = 'rgb(100, 100, 100, .7)';
-    };
-
-    const elements = document.getElementsByClassName('divs5');
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = 'rgb(100, 100, 100, .7)';
-    };
-    document.getElementById('alladivs').style.backgroundColor = 'rgb(100, 100, 100, .7)';
-    document.querySelector('footer').style.backgroundColor = 'grey';
-};
-
-function hotpink() {
-    const fieldset = document.getElementsByClassName('fieldset');
-    for (let i = 0; i < fieldset.length; i++) {
-        fieldset[i].style.backgroundColor = 'rgb(253, 93, 173, .7)';
-    };
-
-    const elements = document.getElementsByClassName('divs5');
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = 'rgb(253, 93, 173, .7)';
-    };
-    document.getElementById('alladivs').style.backgroundColor = 'rgb(253, 93, 173, .7)';
-    document.querySelector('footer').style.backgroundColor = 'hotpink';
-};
-
-function purple() {
-    const fieldset = document.getElementsByClassName('fieldset');
-    for (let i = 0; i < fieldset.length; i++) {
-        fieldset[i].style.backgroundColor = 'rgb(153, 6, 153, 0.7)';
-    };
-
-    const elements = document.getElementsByClassName('divs5');
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = 'rgb(153, 6, 153, 0.7)';
-    };
-    document.getElementById('alladivs').style.backgroundColor = 'rgb(153, 6, 153, 0.7)';
-    document.querySelector('footer').style.backgroundColor = 'purple';
-};
-
-function rainbow() {
-    const fieldset = document.getElementsByClassName('fieldset');
-    for (let i = 0; i < fieldset.length; i++) {
-        fieldset[i].style.backgroundImage = `linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red)`;
-        fieldset[i].style.opacity = '0.7';
-    };
-
-    const elements = document.getElementsByClassName('divs5');
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundImage = `linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red)`;
-        elements[i].style.opacity = '0.7';
-    };
-    document.getElementById('alladivs').style.backgroundImage = `linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red)`;
-    document.querySelector('footer').style.backgroundImage = `linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red)`;
-
-    document.getElementById('alladivs').style.opacity = '0.7';
-};
 
 // Knappen där användaren själv kan skriva vilken färg som ska användas:
 const clrBtn = document.getElementById('userchoicebtn');
@@ -289,6 +229,7 @@ clrBtn.addEventListener('click', function (prev) {
         elements[i].style.opacity = '0.7';
     };
 });
+
 // Länk med lista till olika färger på Engelska
 let text = `Se en lista på olika färger på Engelska på Wikipedia: `;
 document.getElementById('colorsEng').innerHTML = text.link(`https://simple.wikipedia.org/wiki/List_of_colors`);

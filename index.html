@@ -37,7 +37,7 @@
                 <input id="countrycode" type="text" size="5" placeholder="Sök...">
                 (Ej obligatorisk)
 
-                <button id="submit"><svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1"
+                <button class="submit"><svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1"
                         viewBox="0 0 48 48" enable-background="new 0 0 48 48" height="2em" width="2em"
                         xmlns="http://www.w3.org/2000/svg">
                         <g fill="#616161">
@@ -55,28 +55,28 @@
                 </button>
                 <div id="message"></div>
 
-                <button id="landcodes" onclick="landskoder()">Klicka här för att se världens alla
-                    landskoder
-                </button>
+                <button id="landcodes">Klicka här för att se världens alla landskoder</button>
 
                 <p>Dina senaste sökningar:</p>
                 <ol id="searchedFor"></ol>
             </fieldset>
         </form>
 
-
         <fieldset class="fieldset">
             <p><u> Bennys VäderApp - Funktioner: </u></p>
             <p>Välj ett färgschema för sidan. Vänligen skriv färgen på engelska.</p>
 
-            <button class="blue" type="button" onclick="blue()">Blå</button>
-            <button class="yellow" type="button" onclick="yellow()">Gul</button>
-            <button class="green" type="button" onclick="green()">Grön</button>
-            <button class="grey" type="button" onclick="grey()">Grå-ish</button>
-            <button class="hotpink" type="button" onclick="hotpink()">hotpink</button>
-            <button class="purple" type="button" onclick="purple()">Lila</button>
-            <button class="rainbow" type="button" onclick="rainbow()">Regnbåge</button>
-            <p>Ps. Regnbågar är förevigt, tryck på F5 om du vill byta färg.</p>
+            <div class="changeTheColor"></div>
+
+
+            <!-- <button id="clr1" class="changeTheColor" type="button">Blå</button>
+            <button id="clr2" class="changeTheColor" type="button">Gul</button>
+            <button id="clr3" class="changeTheColor" type="button">Grön</button>
+            <button id="clr4" class="changeTheColor" type="button">Grå-ish</button>
+            <button id="clr5" class="changeTheColor" type="button">hotpink</button>
+            <button id="clr6" class="changeTheColor" type="button">Lila</button>
+            <button id="rainbow" class="changeTheColor" type="button">Regnbåge</button>
+            <p>Ps. Regnbågar är förevigt, tryck på F5 om du vill byta färg.</p> -->
 
             <form>
                 <input id="searchcolor" type="text" placeholder="Write a color here">
@@ -93,12 +93,11 @@
             <button id="wikipediaEng">Read more about the City on Wikipedia here:</button>
 
             <br>
-            <button id="google" onclick="google()">Söka på Staden på www.google.se här: </button>
+            <button id="google">Söka på Staden på www.google.se här: </button>
             <br>
         </fieldset>
 
     </main>
-
 
     <section id="flextoday">
         <div id="alladivs">

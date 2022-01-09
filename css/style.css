@@ -42,7 +42,7 @@ body{
   border-radius: 1rem;
 }
   
-#submit{
+.submit{
   display: flex;
   color: lightblue;
   box-shadow: 1rem 2rem 3rem white;
@@ -51,7 +51,7 @@ body{
   margin-right: 2rem;
 }
   
-#submit:hover{
+.submit:hover{
   background-color: lightblue;
   color: linen;
 }
@@ -167,66 +167,70 @@ body{
   background-color: lightblue;
 }
 
+.searchedCityLi{
+  border: solid 2px red;
+}
+
 /* Ändra färger */
-.purple{
+.clr5{
   background-color: rgb(153, 6, 153);
   color: white;
   padding: 1rem;
   border: solid 4px purple;
   border-radius: 20%;
 }
-.purple:hover{
+.clr5:hover{
   background-color: purple;
 }
 
-.green{
+.clr2{
   background-color: rgb(4, 148, 4);
   color: white;
   padding: 1rem;
   border: solid 4px green;
   border-radius: 20%;
 }
-.green:hover{
+.clr2:hover{
   background-color: green;
   color: white;
 }
 
-.blue{
+.clr0{
   background-color: rgba(1, 1, 173, 0.63);
   color: white;
   padding: 1rem;
   border: solid 4px darkblue;
   border-radius: 20%;
 }
-.blue:hover{
+.clr0:hover{
   background-color: blue;
 }
 
-.grey{
+.clr3{
   background-color: grey;
   color: white;
   padding: 1rem;
   border: solid 4px rgb(100, 100, 100);
   border-radius: 20%;
 }
-.grey:hover{
+.clr3:hover{
   background-color: rgb(100, 100, 100);
   color: white;
 }
 
-.hotpink{
+.clr4{
   background-color: hotpink;
   color: white;
   padding: 1rem;
   border: solid 4px rgb(212, 73, 143);
   border-radius: 20%;
 }
-.hotpink:hover{
+.clr4:hover{
   background-color: rgb(212, 73, 143);
   color: white;
 }
 
-.yellow{
+.clr1{
 background-color: yellow;
 color: black;
 padding: 1rem;
@@ -234,11 +238,11 @@ border: solid 4px rgb(235, 235, 6);
 border-radius: 20%;
 }
 
-.yellow:hover{
+.clr1:hover{
   background-color: rgb(235, 235, 6);
 }
 
-.rainbow{
+.clr6{
   background-image: linear-gradient(to left, violet, indigo, blue,  green, yellow, orange, red);
   color: white;
   padding: 1rem;
@@ -246,7 +250,7 @@ border-radius: 20%;
   border-radius: 20%;
 }
 
-.rainbow:hover{
+.clr6:hover{
   background-image: linear-gradient(to left, red, orange, yellow,green,blue,indigo,violet)
 }
 
